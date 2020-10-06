@@ -7,7 +7,7 @@ import logging.config
 
 logging.config.fileConfig("configs/logging.conf")
 
-from core.tlg import notify_attempts_results
+from src.tlg import notify_attempts_results
 
 
 DVMN_TOKEN = os.environ.get("DVMN_TOKEN")
