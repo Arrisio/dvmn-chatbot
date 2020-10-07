@@ -6,8 +6,8 @@ import time
 from src.tlg import notify_attempts_results
 
 import logging.config
-logging.config.fileConfig("configs/logging.conf")
 
+logging.config.fileConfig("configs/logging.conf")
 
 
 DVMN_TOKEN = os.environ.get("DVMN_TOKEN")
@@ -16,8 +16,9 @@ CONNECTION_ERROR_SLEEP_TIME = 60
 
 
 def run():
-    requested_timestamp = datetime.timestamp(datetime.now())
-    requested_timestamp = datetime.timestamp(datetime.fromisoformat("2019-01-01"))
+    requested_timestamp = datetime.timestamp(
+        datetime.fromisoformat(os.getenv("CHECK_START_DATE")) or datetime.now()
+    )
     while True:
         try:
             response = requests.get(
@@ -28,14 +29,17 @@ def run():
             response_payload = response.json()
             if response_payload.get("status") == "found":
                 attempt_results = response_payload["new_attempts"]
-                logging.debug('devman api return attampts info', extra={'attemptsNumber': len(attempt_results)})
+                logging.debug(
+                    "devman api return attampts info",
+                    extra={"attemptsNumber": len(attempt_results)},
+                )
                 requested_timestamp = response_payload["last_attempt_timestamp"]
 
                 notify_attempts_results(attempt_results)
             elif response_payload.get("status") == "timeout":
-                logging.debug('devman api request rimeout')
+                logging.debug("devman api request rimeout")
             else:
-                raise Exception('unkown response format from devman api')
+                raise Exception("unkown response format from devman api")
         except (
             requests.exceptions.ReadTimeout,
             requests.exceptions.ConnectionError,
