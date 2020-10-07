@@ -3,11 +3,11 @@ import requests
 from datetime import datetime
 import time
 
-import logging.config
+from src.tlg import notify_attempts_results
 
+import logging.config
 logging.config.fileConfig("configs/logging.conf")
 
-from src.tlg import notify_attempts_results
 
 
 DVMN_TOKEN = os.environ.get("DVMN_TOKEN")
