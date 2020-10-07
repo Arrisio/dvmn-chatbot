@@ -1,6 +1,6 @@
 import os
-import random
-from typing import NoReturn, Dict
+import logging
+from typing import NoReturn
 import telegram
 
 def notify_attempts_results(
@@ -13,10 +13,10 @@ def notify_attempts_results(
             parse_mode=telegram.parsemode.ParseMode.MARKDOWN,
             text=generate_message(attempt_result),
         )
+        logging.debug('attempt result notified', extra=attempt_result)
 
 
 def generate_message(attempt_result: dict) -> str:
-
     if attempt_result["is_negative"]:
         check_result = "*возвращена на доработку*"
     else:
