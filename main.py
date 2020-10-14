@@ -11,6 +11,8 @@ DVMN_TOKEN = os.environ.get("DVMN_TOKEN")
 DVMN_API_URL = "https://dvmn.org/api/long_polling/"
 CONNECTION_ERROR_SLEEP_TIME = 60
 
+class DvmnUnknownReponseStatusException(Exception):
+    pass
 
 def run():
     requested_timestamp = datetime.timestamp(
@@ -40,7 +42,7 @@ def run():
                 logging.debug("devman api request timeout")
 
             else:
-                raise Exception("unkown response format from devman api")
+                raise DvmnUnknownReponseStatusException(str(response_payload))
 
         except requests.exceptions.ReadTimeout:
             logging.debug("devman api request timeout")
