@@ -1,8 +1,8 @@
-# DevmanTaskTracker
-Телеграм-бот для отслеживания статуса проверки задач на сайте dvmn.org
-
-# Курс "Чат-боты на Python"
+### Курс "Чат-боты на Python"
 https://dvmn.org/modules/chat-bots/lesson/devman-bot/
+
+## урок 1
+Телеграм-бот для отслеживания статуса проверки задач на сайте dvmn.org
 
 ### Фунционал:
 * Программа опрашивает API сайта dvmn.org в режиме long-polling
