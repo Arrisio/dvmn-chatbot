@@ -1,14 +1,16 @@
 import logging
 import os
-from typing import NoReturn
+from typing import NoReturn, Union
 
 import telegram
 
 
 def notify_attempts_results(
-    attempts_results: list, bot=telegram.Bot(token=os.environ.get("BOT_TOKEN"))
+    attempts_results: list,
+    bot: telegram.Bot = telegram.Bot(token=os.environ.get("BOT_TOKEN")),
+    chat_id: Union[str, int] = os.environ.get("SUBSCRIBER_CHAT_ID"),
 ) -> NoReturn:
-    chat_id = os.environ.get("SUBSCRIBER_CHAT_ID")
+
     for attempt_result in attempts_results:
         bot.send_message(
             chat_id=chat_id,
@@ -24,6 +26,6 @@ def generate_message(attempt_result: dict) -> str:
     else:
         check_result = "*принята*"
     return (
-        f"""Задача [{attempt_result['lesson_title']}]"""
-        f"""(https://dvmn.org{attempt_result["lesson_url"]}) {check_result}"""
+        f"Задача [{attempt_result['lesson_title']}]"
+        f"(https://dvmn.org{attempt_result['lesson_url']}) {check_result}"
     )
