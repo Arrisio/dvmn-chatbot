@@ -11,10 +11,14 @@ https://dvmn.org/modules/chat-bots/lesson/devman-bot/
 
 ### Как установить
 
-1. git clone https://github.com/Arrisio/dvmn-chatbot.git
+1. Склонировать репозиторий с кодом
+```
+git clone https://github.com/Arrisio/dvmn-chatbot.git
+cd dvmn-chatbot
+````
+2. Создайте и активируйте виртуальное окружение
 *Python3 должен быть уже установлен.*
 *Далее приведены команды для UNIX системы*
-2. Создайте и активируйте виртуальное окружение
 ```
 $ python3 -m venv env
 $ source env/bin/activate
