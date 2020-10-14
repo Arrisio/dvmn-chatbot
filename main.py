@@ -11,8 +11,10 @@ DVMN_TOKEN = os.environ.get("DVMN_TOKEN")
 DVMN_API_URL = "https://dvmn.org/api/long_polling/"
 CONNECTION_ERROR_SLEEP_TIME = 60
 
+
 class DvmnUnknownReponseStatusException(Exception):
     pass
+
 
 def run():
     requested_timestamp = datetime.timestamp(
