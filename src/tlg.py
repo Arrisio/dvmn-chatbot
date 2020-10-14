@@ -6,7 +6,7 @@ import telegram
 
 
 def notify_attempts_results(
-    attempts_results: list, bot=telegram.Bot(token=os.environ.get("TLG_BOT_TOKEN"))
+    attempts_results: list, bot=telegram.Bot(token=os.environ.get("BOT_TOKEN"))
 ) -> NoReturn:
     chat_id = os.environ.get("SUBSCRIBER_CHAT_ID")
     for attempt_result in attempts_results:
