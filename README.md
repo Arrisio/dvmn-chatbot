@@ -1,7 +1,8 @@
-#Курс "Чат-боты на Python"
-https://dvmn.org/modules/chat-bots/lesson/devman-bot/
 # DevmanTaskTracker
 Телеграм-бот для отслеживания статуса проверки задач на сайте dvmn.org
+
+# Курс "Чат-боты на Python"
+https://dvmn.org/modules/chat-bots/lesson/devman-bot/
 
 ### Фунционал:
 * Программа опрашивает API сайта dvmn.org в режиме long-polling
@@ -10,7 +11,7 @@ https://dvmn.org/modules/chat-bots/lesson/devman-bot/
 
 ### Как установить
 
-1. git clone <url репозитория>
+1. git clone https://github.com/Arrisio/dvmn-chatbot.git
 *Python3 должен быть уже установлен.*
 *Далее приведены команды для UNIX системы*
 2. Создайте и активируйте виртуальное окружение
