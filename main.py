@@ -62,4 +62,5 @@ if __name__ == "__main__":
         set_default_prod_configuration=False,
         notify_with_telegram=True,
     )
+    logger.info("service started")
     run()
