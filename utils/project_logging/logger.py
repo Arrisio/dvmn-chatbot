@@ -1,6 +1,9 @@
-import sys, os
+import os
+import sys
 from typing import Union
+
 from loguru import logger
+
 from .notifier import notify_telegram
 
 

@@ -1,8 +1,9 @@
-from utils.project_logging import logger
 import os
 from typing import NoReturn, Union
 
 import telegram
+
+from utils.project_logging import logger
 
 
 def notify_attempts_results(
