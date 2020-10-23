@@ -1,4 +1,4 @@
-import logging
+from utils.project_logging import logger
 import os
 from typing import NoReturn, Union
 
@@ -17,7 +17,7 @@ def notify_attempts_results(
             parse_mode=telegram.parsemode.ParseMode.MARKDOWN,
             text=generate_message(attempt_result),
         )
-        logging.debug("attempt result notified", extra=attempt_result)
+        logger.debug("attempt result notified", extra=attempt_result)
 
 
 def generate_message(attempt_result: dict) -> str:
