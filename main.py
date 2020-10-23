@@ -58,5 +58,7 @@ def run():
 if __name__ == "__main__":
     configure_logger(
         context_extra=True,
+        json_forman=False,
+        notify_with_telegram=True,
     )
     run()
