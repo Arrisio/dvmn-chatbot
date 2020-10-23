@@ -51,7 +51,7 @@ def run():
             logger.debug("devman api request timeout")
 
         except requests.exceptions.ConnectionError as e:
-            logger.warning(e.msg)
+            logger.warning(e)
             time.sleep(CONNECTION_ERROR_SLEEP_TIME)
 
 
