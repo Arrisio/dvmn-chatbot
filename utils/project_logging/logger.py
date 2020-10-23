@@ -105,4 +105,4 @@ def _stdout_filter(record):
     return record["level"].no <= logger.level("WARNING").no
 
 
-logger.configure(**_get_loguru_config())
+logger.configure(**_get_loguru_config())  # если нас устраивают дефолтовые настройки и мы не хотим конфигуряцить логгер в коде
