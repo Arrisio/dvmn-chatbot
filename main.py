@@ -58,7 +58,8 @@ def run():
 if __name__ == "__main__":
     configure_logger(
         context_extra=True,
-        json_forman=False,
+        level="INFO",
+        set_default_prod_configuration=False,
         notify_with_telegram=True,
     )
     run()
