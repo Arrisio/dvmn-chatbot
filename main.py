@@ -1,7 +1,7 @@
 import logging.config
 import os
 import time
-from datetime import datetime
+from datetime import datetime, date
 
 import requests
 
@@ -18,7 +18,7 @@ class DvmnUnknownReponseStatusException(Exception):
 
 def run():
     requested_timestamp = datetime.timestamp(
-        datetime.fromisoformat(os.getenv("CHECK_START_DATE")) or datetime.now()
+        date.fromisoformat(os.getenv("CHECK_START_DATE")) or datetime.now()
     )
     while True:
         try:
