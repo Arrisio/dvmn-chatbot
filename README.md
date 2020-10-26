@@ -39,6 +39,10 @@ $ python main.py
 - `DVMN_TOKEN`=токен для работы с API Devman. [DVMN's API](https://dvmn.org/api/docs/).
 - `TG_SUBSCRIBER_CHAT_ID`=Ваш чат ID в телеграм. Чтобы его узнать, отправьте сообщение @userinfobot.
 
+Следующие переменные окружения опциональны:
+- `LOGGING_LEVEL` - уровень логирования, варианты значений - см. официальную документацию [Loguru](https://loguru.readthedocs.io/en/stable/api/logger.html). По умолчнию - `INFO`.  
+- `LOGGING_DEFAULT_PROD_CONF` - использовать ли дефолтовый вывод логов для боевого режима, в котором логи собираются сборщиком логов (напр. filebeat) и отправляются в ELK: Логи выводяться в json формат; ERROR и CRITICAL логи выводятся в stderr
+- `LOGGING_NOTIFY_WITH_TELEGRAM` - отправльть сообщени об ошибках через телеграм подписчику (т.е. поьлзователю чей userId указан в `TG_SUBSCRIBER_CHAT_ID`  ) 
 
 ### Цель проекта
 

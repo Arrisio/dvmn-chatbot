@@ -12,10 +12,12 @@ def get_loguru_config(
     use_default_prod_configuration: bool = strtobool(
         os.getenv("LOGGING_DEFAULT_PROD_CONF", "FALSE")
     ),
-    level: Union[None, str, int] = os.getenv("LOGGING_LEVEL", "DEBUG"),
+    level: Union[None, str, int] = os.getenv("LOGGING_LEVEL", "INFO"),
     extra_vars: list = [],
     context_extra: bool = False,
-    notify_with_telegram: bool = False,
+    notify_with_telegram: bool = strtobool(
+        os.getenv("LOGGING_NOTIFY_WITH_TELEGRAM", "FALSE")
+    ),
 ) -> dict:
     """
     возвращает словарь с к конфигурацией логгера Loguru, в зависимости от среды эксплуатации и доп. параметров
