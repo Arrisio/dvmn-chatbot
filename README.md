@@ -35,9 +35,9 @@ $ python main.py
 
 ### Переменные окружения
 Трубеутся следующие переменые окружения :
-- `BOT_TOKEN`=токен вашего бота. [Как получить токен бота](https://tlgrm.ru/docs/bots).
+- `TG_BOT_TOKEN`=токен вашего бота. [Как получить токен бота](https://tlgrm.ru/docs/bots).
 - `DVMN_TOKEN`=токен для работы с API Devman. [DVMN's API](https://dvmn.org/api/docs/).
-- `SUBSCRIBER_CHAT_ID`=Ваш чат ID в телеграм. Чтобы его узнать, отправьте сообщение @userinfobot.
+- `TG_SUBSCRIBER_CHAT_ID`=Ваш чат ID в телеграм. Чтобы его узнать, отправьте сообщение @userinfobot.
 
 
 ### Цель проекта

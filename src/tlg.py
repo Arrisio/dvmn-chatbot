@@ -8,8 +8,8 @@ from utils.project_logging import logger
 
 def notify_attempts_results(
     attempts_results: list,
-    bot: telegram.Bot = telegram.Bot(token=os.environ.get("BOT_TOKEN")),
-    chat_id: Union[str, int] = os.environ.get("SUBSCRIBER_CHAT_ID"),
+    bot: telegram.Bot = telegram.Bot(token=os.environ.get("TG_BOT_TOKEN")),
+    chat_id: Union[str, int] = os.environ.get("TG_SUBSCRIBER_CHAT_ID"),
 ) -> NoReturn:
 
     for attempt_result in attempts_results:
