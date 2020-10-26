@@ -93,12 +93,7 @@ def _get_loguru_config(
 
 
 def _autodefine_is_prod_configuration():
-    if os.getenv(
-        "HOSTNAME"
-    ):  # эту переменную как правило создает докер. завязывемся на нее, чтоб определить - находимся ли мы в режиме разработки или боя. Возможно, в будущем надо будет поискать дургой способ
-        return True
-
-    return False
+    return os.getenv("ENV", "prod") == "prod" #по умолчанию, считаем среду боевой
 
 
 def _stdout_filter(record):
