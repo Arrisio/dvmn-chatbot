@@ -40,8 +40,9 @@ $ python main.py
 - `TG_SUBSCRIBER_CHAT_ID`=Ваш чат ID в телеграм. Чтобы его узнать, отправьте сообщение @userinfobot.
 
 Следующие переменные окружения опциональны:
-- `LOGGING_LEVEL` - уровень логирования, варианты значений - см. официальную документацию [Loguru](https://loguru.readthedocs.io/en/stable/api/logger.html). По умолчнию - `INFO`.  
+- `LOGGING_LEVEL` - уровень логирования, варианты значений - см. официальную документацию [Loguru](https://loguru.readthedocs.io/en/stable/api/logger.html). По умолчанию - `INFO`.  
 - `LOGGING_DEFAULT_PROD_CONF` - использовать ли дефолтовый вывод логов для боевого режима, в котором логи собираются сборщиком логов (напр. filebeat) и отправляются в ELK: Логи выводяться в json формат; ERROR и CRITICAL логи выводятся в stderr
+Варианты значений: y, yes, t, true, 1 - использовать режим. n, no, f, false, off and 0 - не использовать режим. 
 - `LOGGING_NOTIFY_WITH_TELEGRAM` - отправльть сообщени об ошибках через телеграм подписчику (т.е. поьлзователю чей userId указан в `TG_SUBSCRIBER_CHAT_ID`  ) 
 
 ### Цель проекта
