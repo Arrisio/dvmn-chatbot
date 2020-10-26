@@ -10,7 +10,7 @@ from .notifier import notify_telegram
 
 def get_loguru_config(
     use_default_prod_configuration: bool = strtobool(
-        os.getenv("LOGGING_DEFAULT_PROD_CONF", "FALSE")
+        os.getenv("LOGGING_DEFAULT_PROD_CONF", "TRUE")
     ),
     level: Union[None, str, int] = os.getenv("LOGGING_LEVEL", "INFO"),
     extra_vars: list = [],

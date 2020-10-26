@@ -62,8 +62,6 @@ if __name__ == "__main__":
     logger.configure(
         **get_loguru_config(
             context_extra=True,
-            level="INFO",
-            use_default_prod_configuration=False,
             notify_with_telegram=True,
         )
     )
