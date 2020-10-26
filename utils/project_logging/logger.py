@@ -32,7 +32,7 @@ def get_loguru_config(
 
     if use_default_prod_configuration:
 
-        return {
+        config = {
             "handlers": [
                 {
                     "sink": sys.stderr,
@@ -49,26 +49,26 @@ def get_loguru_config(
                 },
             ]
         }
+    else:
+        extra_vars_substring = " | ".join(
+            ["{extra[" + var + "]:>16}" for var in extra_vars]
+        )
+        if context_extra:
+            extra_vars_substring += " |{extra}"
 
-    extra_vars_substring = " | ".join(
-        ["{extra[" + var + "]:>16}" for var in extra_vars]
-    )
-    if context_extra:
-        extra_vars_substring += " |{extra}"
-
-    config = {
-        "extra": {
-            var: "" for var in extra_vars
-        },  # ставим пустое значение по дефолту, чтоб не получать ошибку, если не передаем этот параметр
-        "handlers": [
-            {
-                "sink": sys.stdout,
-                "level": level,
-                "format": "<level>{level: <8}</level>|<cyan>{name:<12}</cyan>:<cyan>{function:<24}</cyan>:<cyan>{line}</cyan> - <level>{message:>32}</level> | "
-                + extra_vars_substring,
-            },
-        ],
-    }
+        config = {
+            "extra": {
+                var: "" for var in extra_vars
+            },  # ставим пустое значение по дефолту, чтоб не получать ошибку, если не передаем этот параметр
+            "handlers": [
+                {
+                    "sink": sys.stdout,
+                    "level": level,
+                    "format": "<level>{level: <8}</level>|<cyan>{name:<12}</cyan>:<cyan>{function:<24}</cyan>:<cyan>{line}</cyan> - <level>{message:>32}</level> | "
+                    + extra_vars_substring,
+                },
+            ],
+        }
 
     if notify_with_telegram:
         config["handlers"].append(
