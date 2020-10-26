@@ -3,9 +3,10 @@ import time
 from datetime import datetime
 
 import requests
+from loguru import logger
 
 from src.tlg import notify_attempts_results
-from utils.project_logging import logger, configure_logger
+from utils.project_logging import get_loguru_config
 
 DVMN_TOKEN = os.environ.get("DVMN_TOKEN")
 DVMN_API_URL = "https://dvmn.org/api/long_polling/"
@@ -58,11 +59,14 @@ def run():
 
 
 if __name__ == "__main__":
-    configure_logger(
-        context_extra=True,
-        level="INFO",
-        set_default_prod_configuration=False,
-        notify_with_telegram=True,
+    logger.configure(
+        **get_loguru_config(
+            context_extra=True,
+            level="INFO",
+            use_default_prod_configuration=False,
+            notify_with_telegram=True,
+        )
     )
+
     logger.info("service started")
     run()
