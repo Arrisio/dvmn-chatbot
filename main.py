@@ -19,7 +19,9 @@ class DvmnUnknownReponseStatusException(Exception):
 @logger.catch(reraise=True)
 def run():
     requested_timestamp = datetime.timestamp(
-        datetime.fromisoformat(os.getenv("CHECK_START_DATE")) or datetime.now()
+        datetime.fromisoformat(
+            os.getenv("CHECK_START_DATE", datetime.now().isoformat())
+        )
     )
     while True:
         try:
