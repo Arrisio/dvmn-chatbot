@@ -17,7 +17,7 @@ https://dvmn.org/modules/chat-bots/lesson/devman-bot/
 git clone https://github.com/Arrisio/dvmn-chatbot-part1.git
 cd dvmn-chatbot
 ````
-2. Создайте и активируйте виртуальное окружение
+2. Создайте и активируйте виртуальное окружениеруже
 *Python3 должен быть уже установлен.*
 *Далее приведены команды для UNIX системы*
 ```
@@ -35,7 +35,7 @@ $ python main.py
 ```
 
 ### Переменные окружения
-Трубеутся следующие переменые окружения :
+Требуются следующие переменые окружения :
 - `TG_BOT_TOKEN`=токен вашего бота. [Как получить токен бота](https://tlgrm.ru/docs/bots).
 - `DVMN_TOKEN`=токен для работы с API Devman. [DVMN's API](https://dvmn.org/api/docs/).
 - `TG_SUBSCRIBER_CHAT_ID`=Ваш чат ID в телеграм. Чтобы его узнать, отправьте сообщение @userinfobot.
