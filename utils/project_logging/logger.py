@@ -79,7 +79,7 @@ def get_loguru_config(
             }
         )
 
-        return config
+    return config
 
 
 def _stdout_filter(record):
